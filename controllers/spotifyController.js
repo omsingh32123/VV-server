@@ -37,6 +37,7 @@ const getSpotifyToken = async () => {
 // Search Songs on Spotify (Public API)
 const searchSongs = async (req, res) => {
   const { query, limit = 50, offset = 0 } = req.query;
+  console.log("In searchSongs function with data = ",query, limit, offset);
   if (!query) return res.status(400).json({ error: "Query parameter is required" });
 
   try {

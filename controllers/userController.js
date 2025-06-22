@@ -6,6 +6,7 @@ require("dotenv").config();
 const createUser = async (req, res) => {
     
     const { name, email, picture } = req.body;
+    console.log("In createUser with name:", name, "email:", email, "picture:",name);
     if(!name || !email || !picture) {
         return res.status(400).json({ message: "Missing required fields" });
     }
@@ -45,6 +46,8 @@ const getUser = async (req, res) => {
 
 const getVotedSongs = async (req, res) => {
     const { userId } = req.params;
+    console.log("In getVotedSongs with userId:", userId);
+    
     if(!userId) {
         return res.status(400).json({ message: "User ID required !" });
     }
