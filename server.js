@@ -10,12 +10,12 @@ const songRoutes = require("./routes/songRoutes");
 const userRoutes = require("./routes/userRoutes");
 const spotifyRoutes = require("./routes/spotifyRoutes");
 const artistRoutes = require("./routes/artistRoutes");
-const FRONTEND_URI = process.env.FRONTEND_URL || "http://localhost:3000";
+const FRONTEND_URI = process.env.FRONTEND_URL;
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: FRONTEND_URI, // Allow all origins (Change it in production)
+    origin: "*", // Allow all origins (Change it in production)
   },
 });
 
