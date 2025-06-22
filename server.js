@@ -15,7 +15,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*", // Allow all origins (Change it in production)
+    origin: FRONTEND_URI, // Allow all origins (Change it in production)
   },
 });
 
