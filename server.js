@@ -16,6 +16,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: FRONTEND_URI, // Allow all origins (Change it in production)
+    credentials: true,
   },
 });
 
@@ -25,7 +26,7 @@ app.use(
     origin: FRONTEND_URI, // Change this to your frontend URL
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    // credentials: true, // Allow cookies, authorization headers, etc.
+    credentials: true, // Allow cookies, authorization headers, etc.
   })
 );
 

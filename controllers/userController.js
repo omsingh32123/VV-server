@@ -6,7 +6,7 @@ require("dotenv").config();
 const createUser = async (req, res) => {
     
     const { name, email, picture } = req.body;
-    console.log("In createUser with name:", name, "email:", email, "picture:",name);
+    console.log("In createUser with name:", name, "email:", email, "picture:",picture);
     if(!name || !email || !picture) {
         return res.status(400).json({ message: "Missing required fields" });
     }
